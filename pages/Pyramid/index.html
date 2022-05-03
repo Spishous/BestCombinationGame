@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<script type="text/javascript" src="/assets/js/cards.js"></script>
+		<script type='text/javascript' src="/assets/js/util_functions.js"></script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="./style.css" />
+		<title>Pyramide</title>
+	</head>
+	<body>
+		<h1>Pyramide</h1>
+		<button id="next_player" onclick="nextPlayer()">Jouer</button>
+		<div id="main_wrapper">
+			<div id="aside_content">
+				<h2>Joueurs</h2>
+				<button id="add_player" onclick="addPlayer()">Ajouter un joueur</button>
+				<div id="players"></div>
+				<button id="liar" onclick="liar()">Tester si un joueur ment</button>
+			</div>
+			<div id="main_content">
+				<h2>Informations</h2>
+				<p id="info">Cliquez sur 'Jouer' pour commencer la partie</p>
+				<button id=pick_card disabled="true"><img src="/assets/cards_images/gray_back.png" alt="Dos de carte"></button>
+				<div id="result">
+					<div id="pyramid_cards"></div>
+					<div id="buttons">
+						<button id="red" class="guess" onclick="guess(this.id)">Rouge</button>
+						<button id="black" class="guess" onclick="guess(this.id)">Noire</button>
+						<button id="more" class="guess" onclick="guess(this.id)">Plus</button>
+						<button id="minus" class="guess" onclick="guess(this.id)">Moins</button>
+						<button id="internal" class="guess" onclick="guess(this.id)">Interne</button>
+						<button id="external" class="guess" onclick="guess(this.id)">Externe</button>
+						<button id="equal" class="guess" onclick="guess(this.id)">Egal</button>
+						<button id="slade" class="guess" onclick="guess(this.id)">Pique</button>
+						<button id="diamond" class="guess" onclick="guess(this.id)">Carreau</button>
+						<button id="club" class="guess" onclick="guess(this.id)">Trèfle</button>
+						<button id="heart" class="guess" onclick="guess(this.id)">Coeur</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	<script src="./script.js"></script>
+	</body>
+</html>

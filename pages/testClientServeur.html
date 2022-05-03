@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/assets/js/multiplayer.js"></script>
+  <style>
+    textarea#boxInfo {width:100%; min-height:300px}
+    body {font-family:sans-serif; background-color:lightgrey}
+  </style>
+</head>
+<body>
+<h1>Script Multijoueur</h1>
+<textarea readonly id="boxInfo"></textarea>
+<div>
+  <button id="Connect">Connect</button>
+  <input type="text" value="bob" id="name" placeholder="name">
+  <button id="Log" disabled>Log</button>
+  <input type="text" value="room1" id="nameroom" placeholder="name">
+  <button id="JoinRoom" disabled>JoinRoom</button>
+  <button id="LeftRoom">LeftRoom</button>
+  <input type="text" value="msg" id="msgs" placeholder="name">
+  <button id="Msg" disabled>Message</button>
+  <button id="Disconnect" disabled>Disconnect</button>
+  <button id="debug" >debug</button>
+  <button id="roomlist" >room list</button>
+</div>
+
+<script>
+  multi= new Multiplayer();
+
+  $(function(){
+    multi.onConnected=()=>{
+      write('Connecté');
+      $('#Disconnect').removeAttr('disabled');
+      $('#Msg').removeAttr('disabled');
+      $('#Log').removeAttr('disabled');
+      $('#JoinRoom').removeAttr('disabled');
+    }
+    multi.onDisconnected=()=>{
+      write('Déconnecté');
+      $('#Disconnect').attr('disabled',true);
+      $('#Log').attr('disabled',true);
+      $('#Msg').attr('disabled',true);
+      $('#JoinRoom').attr('disabled',true);
+    }
+    multi.onMessage=(e)=>{
+      write(e);
+    }
+    multi.onJoinedRoom=(e)=>{
+      write(e);
+    }
+    multi.onLeftRoom=(e)=>{
+      write(e);
+    }
+    multi.onLogged=(e)=>{
+      write(e);
+    }
+    multi.onSendMsg=(e)=>{
+      write(e);
+    }
+    multi.onPeerConnected=(e)=>{
+      write(e);
+    }
+    multi.onPeerDisconnected=(e)=>{
+      write(e);
+    }
+    multi.onError=(e)=>{
+      write(e);
+    }
+    multi.onRoomList=(e)=>{
+      write(e);
+    }
+
+    $(document).on('click','#Connect',function(){
+        write('Connexion..');
+        multi.connect('wss://bestcombinationgame.alwaysdata.net/wss');
+    })
+    .on('click','#Log',function(){
+        multi.log($('#name').val());
+    })
+    .on('click','#Msg',function(){
+        multi.sendMsg($('#msgs').val());
+    })
+    .on('click','#JoinRoom',function(){
+      multi.joinRoom($('#nameroom').val());
+    })
+    .on('click','#LeftRoom',function(){
+      multi.leftRoom();
+    })
+    .on('click','#debug',function(){
+      multi.debug(1);
+    })
+    .on('click','#roomlist',async function () {
+      let a = await multi.getListRoomPublic();
+      console.log(a);
+    })
+    .on('click','#Disconnect',function(){
+      multi.disconnect();
+    })
+
+
+    function write(msg){
+      $('#boxInfo').append(JSON.stringify(msg)+'\n');
+      $('#boxInfo')[0].scrollTop=999999;
+    }
+  })
+</script>
+</body>
+</html>

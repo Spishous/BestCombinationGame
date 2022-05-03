@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<script type="text/javascript" src="/assets/js/cards.js"></script>
+		<script type='text/javascript' src="/assets/js/util_functions.js"></script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="./style.css" />
+		<title>Dealer</title>
+	</head>
+	<body>
+		<h1>Dealer</h1>
+		<button id="next_player" onclick="nextPlayer()">Jouer</button>
+		<div id="main_wrapper">
+			<div id="aside_content">
+				<h2>Joueurs</h2>
+				<button id="add_player" onclick="addPlayer()">Ajouter un joueur</button>
+				<div id="players"></div>
+			</div>
+			<div id="main_content">
+				<h2>Informations</h2>
+				<p id="info">Cliquez sur 'Jouer' pour commencer la partie</p>
+				<!-- <button id=pick_card onclick="pickCard()" disabled="true"><img src="images/gray_back.png" alt="Dos de carte"></button> -->
+				<button id=pick_card disabled="true"><img src="/assets/cards_images/gray_back.png" alt="Dos de carte"></button>
+			</div>
+			<div id="buttons">
+				<button id="1" class="guess" onclick="guess(this.id)">As</button>
+				<button id="2" class="guess" onclick="guess(this.id)">Deux</button>
+				<button id="3" class="guess" onclick="guess(this.id)">Trois</button>
+				<button id="4" class="guess" onclick="guess(this.id)">Quatre</button>
+				<button id="5" class="guess" onclick="guess(this.id)">Cinq</button>
+				<button id="6" class="guess" onclick="guess(this.id)">Six</button>
+				<button id="7" class="guess" onclick="guess(this.id)">Sept</button>
+				<button id="8" class="guess" onclick="guess(this.id)">Huit</button>
+				<button id="9" class="guess" onclick="guess(this.id)">Neuf</button>
+				<button id="10" class="guess" onclick="guess(this.id)">Dix</button>
+				<button id="11" class="guess" onclick="guess(this.id)">Valet</button>
+				<button id="12" class="guess" onclick="guess(this.id)">Dame</button>
+				<button id="13" class="guess" onclick="guess(this.id)">Roi</button>
+			</div>
+		</div>
+		<div id="cards_used"></div>
+	<script src="./script.js"></script>
+	</body>
+</html>

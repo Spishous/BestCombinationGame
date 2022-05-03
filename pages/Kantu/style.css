@@ -1,0 +1,107 @@
+/********** Game handling **********/
+
+#main_wrapper {
+    display: flex;
+    height: 100%;
+}
+
+#main_content h1 {
+    text-align: center;
+    width: 65%;
+    margin: 0 17.5% 0 17.5%;
+    font-size: x-large;
+}
+
+#main_content header {
+    height: 10vh;
+}
+
+#black_card {
+    background-color: rgb(15, 38, 63);
+    box-shadow: 5px 5px 5px rgb(150, 150, 150);
+    color: white;
+    width: auto;
+    height: 22em;
+    border-radius: 1em;
+    padding: 0.2em;
+    text-align: center;
+    margin: auto;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+#black_card img {
+    max-width: 100%;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 1em;
+    visibility: visible;
+    z-index: -1;
+    background: blue;
+    font-size: medium;
+}
+
+#choice {
+    display: flex;
+    min-height: 45vh;
+    padding: 0 1em;
+    align-items: center;
+    flex-flow: wrap;
+}
+
+#propositions {
+    margin: 1em;
+    overflow: auto;
+    flex: 1;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.proposition {
+    background-color: white;
+    color: black;
+    text-align: center;
+    min-width: 10pc;
+    flex: 1;
+    border-radius: 1em;
+    padding: 0.9em 1em;
+    margin-bottom: 0.2em;
+}
+
+#white_cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1em;
+    row-gap: 12px;
+}
+
+.white_card {
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+    color: black;
+    text-align: center;
+    width: 8em;
+    height: 12em;
+    border-radius: 1em;
+    padding: 0.2em;
+    margin: 0.2em;
+    font-size: medium;
+}
+
+.proposition:disabled, .white_card:disabled {
+    background-color: rgb(200, 200, 200);
+}
+
+@media (max-width: 768px) {
+    .proposition {
+        font-size: xx-small;
+    }
+
+    .white_card {
+        font-size: xx-small;
+    }
+}

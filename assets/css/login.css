@@ -1,0 +1,27 @@
+body {overflow: hidden;background:#162b3d;color:whitesmoke;font-family:Roboto, 'Segoe UI', Tahoma, sans-serif;margin:0;font-size:14px}
+h1 {font-size:26px}
+.extra-design {position:absolute;z-index:-1;left:0;width:100%;top:0;bottom:0;overflow:hidden}
+.extra-design .bubble1 {background:#254162;display:block;height:200px;width:100vw;position:absolute;filter:blur(40px);left:50%;top:0;transform:translate(-70%,-50%) rotate(-10deg)}
+input#pwd {text-security: disc;-webkit-text-security: disc;-moz-text-security: disc;}
+form.form-login {display:flex;flex-direction:column;width:300px;padding-bottom:5em;}
+.group-form {display:flex;flex-direction:column;margin-bottom:1em}
+main {height:100%;display:flex;align-items:center;justify-content:center;flex-direction: column;margin: auto;}
+#btnLog {cursor:pointer;margin:1em auto;width:200px;font-size:16px;height:2.2em;border-radius:5px;border:none;background-color:#4578b0;color:whitesmoke;font-weight:600}
+.group-form label {opacity:0.5;margin:5px}
+.group-form input {border-radius:5px;border:none;font-size:16px;padding:8px 10px;height:2.2em;outline:none}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+a {
+    display: inline-block;
+    margin: auto;
+    color: #5891d0;
+    text-decoration-line: none;
+}

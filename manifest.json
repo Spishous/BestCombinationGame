@@ -1,0 +1,20 @@
+{
+  "name": "BCG",
+  "short_name": "BCG",
+  "theme_color": "#405a6f",
+  "background_color": "#497faa",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "https://bestcombinationgame.alwaysdata.net",
+  "icons": [{
+    "src": "https://bestcombinationgame.alwaysdata.net/assets/src/icon/app-bcg.png",
+    "type": "image/png",
+    "sizes": "128x128"
+  },
+    {
+      "src": "https://bestcombinationgame.alwaysdata.net/assets/src/icon/32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    }]
+}

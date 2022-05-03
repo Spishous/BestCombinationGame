@@ -1,0 +1,93 @@
+body {overflow:hidden;background:#172e45;color:whitesmoke;font-family:Roboto, 'Segoe UI', Tahoma, sans-serif;margin:0;font-size:14px;text-align:center;display:flex;flex-direction:column;position:absolute;bottom:0;top:0;left:0;right:0}
+.extra-design .bubble1 {background:#264c73;display:block;height:200px;width:100vw;position:absolute;filter:blur(40px);left:50%;top:0;transform:translate(-70%,-50%) rotate(-10deg)}
+.extra-design {position:absolute;z-index:-1;left:0;width:100%;top:0;bottom:0;overflow:hidden}
+#content section {display:flex;pointer-events:none;left:90%;transform:translateX(-50%);height:100%;justify-content:center;flex-direction:column;opacity:0;position:absolute;padding: 5px 10px;transition:left .3s,opacity .3s;}
+#content section.active {pointer-events:auto;left:50%;max-width:100%;opacity:1;}
+#sectionRoom {flex:1;display:flex;align-self:center;margin:50px 0 40px;width:100%;position:relative;overflow:hidden}
+#content {flex:1;display:flex;flex-direction:column;position:relative}
+#pagination {height:80px;display:flex;width:100%;justify-content:center}
+#pagination span {display:block;height:0;border-radius:10px;padding:4px;margin:0 6px;background-color:#676f78;transition:all .2s}
+h1 {margin-top:49px;user-select:none;font-size:1.8em}
+input[type=text] {padding:0px 10px;font-size:16px;height:2.2em;border-radius:6px;border:1px solid lightgrey;width:230px;max-width:100%;outline:none;margin: 15px 0 30px;}
+.btn {background-color:#dda132;display:flex;font-size:16px;text-shadow:0 0 2px #57332a;align-items:center;font-weight:600;justify-content:center;border-radius:6px;margin:15px auto;cursor:pointer;box-shadow:0 0 4px 1px #142638}
+* {box-sizing:border-box}
+section#s1 {flex:1;height:100%;align-items:center}
+#pagination span.active {transform:scale(1.3);background-color:white}
+.btn {transition:filter .1s;user-select:none;width: 13em;max-width:calc(100% - 30px);box-sizing:content-box;padding: 9px 4px;border: none;color: white;}
+.btn:hover {filter:brightness(1.1)}
+.btn:active {filter:brightness(0.8)}
+.btn[disabled] {pointer-events:none!important;filter:grayscale(0.9) opacity(0.7)!important}
+#content section.oldActive {left:10%}
+section#s2 .btn {}
+#s1 .btn.btn-enter {}
+#btnRetour {
+    position:absolute;
+    width:1.4em;
+    height:1.4em;
+    /* background:#4374a5; */
+    background: transparent;
+    border: none;
+    color: whitesmoke;
+    margin:0 1em;
+    border-radius:2em;
+    cursor:pointer;
+    z-index:9;
+    display: grid;
+    padding: 0;
+    align-content: center;
+    justify-content: center;
+    font-size:30px;
+    transition:transform .3s;
+}
+svg {width:1em;height:1em}
+.content-1 {background-color: #142536;padding: 10px 10px;border-radius: 12px;overflow: auto;border: 1px solid #435973;box-shadow: inset 0 0 8px #091826;}
+section h2 {text-align:initial}
+.container-1 {flex:1;width:410px;max-width:100%;font-size:16px}
+.select-switch {display:flex;margin: 1em auto 2em;align-items:center;width:240px;}
+.select-switch label {display:flex;align-items:center;cursor:pointer;padding:5px;user-select:none}
+.select-switch input {display:none}
+.select-switch .btn-switch::after {content:"";top:50%;right:8px;width:12px;height:12px;transform:translateY(-50%);background:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/uncheck-switcher.svg);background-size:12px 12px;position:absolute}
+.select-switch .btn-switch::before {content:"";left:1px;top:1px;width:24px;height:24px;background:white;border-radius:50%;z-index:1;transition:transform 0.3s;position:absolute}
+.select-switch [type="checkbox"]:checked + label .btn-switch::before {transform:translateX(24px)}
+.select-switch [type="checkbox"]:checked + label .btn-switch::after {width:14px;height:14px;left:8px;background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/checkmark-switcher.svg);background-size:14px 14px}
+.select-switch .btn-switch {position:relative;width:50px;height:26px;border-radius:15px;box-shadow:inset 0 0 5px rgba(0,0,0,0.40);margin: 0 0 0 1em;background:grey;transition:all 0.3s;}
+.select-switch [type="checkbox"]:checked + label .btn-switch {background:#cda32c}
+#btnRetour.close svg.fa-arrow-left,#btnRetour .fa-times {display:none}
+#btnRetour.close .fa-times {display:block}
+#btnRetour.close {transform:rotate(-360deg)}
+#listRoom ul {list-style:none;padding:0;font-size:18px;font-weight:600;margin: 0;}
+#listRoom ul li {height:2.5em;display:flex;align-items:center;justify-content:center;/* border: 1px solid #4b647e; */margin: .5em 0;border-radius: .5em;border-left:none;border-right:none;background-color: #497cb9;cursor:pointer;user-select:none;transition:filter .1s;}
+#listRoom ul li:hover {filter:brightness(1.05)}
+#listRoom ul li:active {filter:brightness(0.95)}
+#listRoom ul li .room-name {text-shadow:0 0 5px #6e7881}
+.info-error {
+    font-size: 14px;
+    margin: -25px 0 20px;
+    color: orangered;
+}
+.btn i.fas{margin: 0 6px;padding-top:2px;}
+/**/
+#help-btn {font-family:'Font Awesome 5 Free';font-size:18px;font-weight:normal;color:#9e9e9e;transition:color .1s;cursor:pointer;margin-left: 1em;}
+#help-btn:before {content:"\f059";font-weight:bold}
+#help-btn:hover {font-weight:bold;color:#dca847;border-width:2px}
+/**/
+.help-popup {position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(48,50,55,0.20);z-index:100;backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.help-content {border:1px solid #aaa;width:450px;height:250px;max-width:90%;border-radius:12px;background:rgba(20,37,54,0.95);box-shadow:0 0 12px #151f2a;cursor:default}
+.help-popup h1 {margin:0.8em;font-weight:600}
+.help-popup p {width:90%;margin:auto;color:#ccc}
+.avatar {
+    margin: auto 15px;
+    font-size: 50px;
+}
+.avatar {filter: drop-shadow(1px 2px 5px rgba(0,0,0,.5));}
+.tools-avatar {}
+.tools-avatar .fa-angle-left, .tools-avatar .fa-angle-right {font-size:40px;padding:12px 10px 10px;line-height:1pc;cursor:pointer;border-radius:1em;}
+.change-element {display:flex;align-items:center;justify-content: space-between;}
+.zone-avatar {display:flex;margin-bottom: 3em;}
+
+.change-element button {
+    background: transparent;
+    border: none;
+    padding: 5px;
+    color: whitesmoke;
+}

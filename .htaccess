@@ -1,0 +1,25 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+<filesMatch ".(css|js|ico|woff2|jpg|jpeg|png|gif|pdf)$">
+Header set Cache-Control "max-age=31536000, public, immutable"
+</filesMatch>
+<IfModule mod_mime.c>
+    AddCharset utf-8 .appcache \
+                     .atom \
+                     .css \
+                     .js \
+                     .json \
+                     .manifest \
+                     .map \
+                     .mjs \
+                     .rdf \
+                     .rss \
+                     .vtt \
+                     .webmanifest \
+                     .xml
+</IfModule>
+<IfModule mod_headers.c>
+    Header merge Cache-Control immutable
+</IfModule>

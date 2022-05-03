@@ -1,0 +1,41 @@
+/********** Game handling **********/
+
+#main_wrapper {
+    display: flex;
+    height: 100%;
+}
+
+#main_content h1 {
+    text-align: center;
+    width: 65%;
+    margin: 0 17.5% 0 17.5%;
+    font-size: x-large;
+}
+
+#main_content header {
+    height: 10vh;
+}
+
+#content {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+
+#pick_expression, #add_player {
+    width: calc(100% - 2em);
+    margin: 0.5em 1em 1em 1em;
+    border-radius: 0.5em;
+    color: white;
+}
+
+#pick_expression {
+    height: 100%;
+    background-color: rgb(15, 38, 63);
+    padding: 2em;
+}
+
+#add_player {
+    background-color: rgb(155, 38, 46);
+}

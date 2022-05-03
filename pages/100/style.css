@@ -1,0 +1,51 @@
+/********** Game handling **********/
+
+#main_wrapper {
+    display: flex;
+    height: 100%;
+}
+
+#main_content h1 {
+    text-align: center;
+    width: 65%;
+    margin: 0 17.5% 0 17.5%;
+    font-size: x-large;
+}
+
+#main_content header {
+    height: 10vh;
+}
+
+#score, #message {
+    text-align: center;
+    width: 65%;
+    margin: 0 17.5% 0 17.5%;
+    font-size: larger;
+}
+
+#scoreDiv {
+    height: 15vh;
+    padding: 1em;
+}
+
+#player_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 1em;
+    height: 75vh;
+    overflow: auto;
+    margin: 0 0.5em 0 0.5em;
+}
+
+.card {
+    height: 9em;
+    width: 6em;
+    margin: 0.1em;
+    visibility: hidden;
+}
+
+img {
+    height: inherit;
+    visibility: visible;
+}

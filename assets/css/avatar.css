@@ -1,0 +1,112 @@
+.avatar {
+    width:2em;
+    height:2em;
+    min-height: 2em;
+    min-width: 2em;
+    position:relative;
+    box-sizing: border-box;
+    filter: drop-shadow(1px 2px 3px rgba(0,0,0,.2));
+}
+.avatar:before {content:"";display:block;height:100%;width:100%;position:absolute;background-size:100%;background-repeat:no-repeat;background-image: url(../avatar-src/face-base-1x1.svg);}
+.avatar-face {
+    background-position-x:center;
+    height:100%;
+    width:80%;
+    margin:auto;
+    top: 0;
+    background-repeat:no-repeat;
+    background-size:contain;
+    position:relative;
+    transition: top .2s, left .2s;
+}
+.avatar-face-eyes {
+    width:100%;
+    height:100%;
+    position:absolute;
+    left: 0;
+    background-repeat:no-repeat;
+    background-position: center 60%;
+    background-size:contain;
+    background-image: url(../avatar-src/face-eyes-1.svg);
+    /*background-image: url("../avatar-src/avatar-src-eyes-2b.png");*/
+}
+.avatar.blink-eyes .avatar-face-eyes{background-image: url(../avatar-src/face-eyes-0.png)}
+.avatar-face-mouth {width:100%;height:100%;position:absolute;left: 0;background-repeat:no-repeat;background-position:center 85%;background-size:contain;background-image:url(../avatar-src/face-mouth-1.png);}
+.avatar-back-hair {background-image:url(../avatar-src/face-hair-b1.svg);position:absolute;height: 120%;width: 120%;background-size: 100%;background-position: center;z-index: -1;top: -10%;left: -10%;}
+.avatar-hair {background-image: url(../avatar-src/face-hair.svg);position:absolute;height:100%;width:100%;background-size:contain;transform: scaleX(-1);top:0;left: 0;}
+
+.avatar[data-h="1"] .a-hair-color {filter: brightness(0.61) contrast(1.1);}
+.avatar[data-h="2"] .a-hair-color {filter: hue-rotate(324deg) brightness(0.36);}
+.avatar[data-h="3"] .a-hair-color {filter:brightness(0.2);}
+.avatar[data-h="4"] .a-hair-color {filter: hue-rotate(292deg) brightness(0.65) contrast(1.6);}
+
+.avatar[data-f="0"]:before {filter:brightness(1.16)}
+.avatar[data-f="2"]:before {filter: brightness(0.8) contrast(1.3);}
+.avatar[data-f="3"]:before {filter: brightness(0.53) contrast(1.4);}
+
+.avatar[data-m="1"] .avatar-face-mouth {background-image:url(../avatar-src/face-mouth-2.png)}
+.avatar[data-m="2"] .avatar-face-mouth {background-image:url(../avatar-src/face-mouth-3.svg)}
+.avatar[data-m="3"] .avatar-face-mouth {background-image:url(../avatar-src/face-mouth-3.svg)}
+.avatar[data-m="4"] .avatar-face-mouth {background-image:url(../avatar-src/face-mouth-3.svg)}
+
+.avatar[data-hf="1"] .avatar-back-hair {background-image:url(../avatar-src/face-hair-b2.svg)}
+
+.avatar[data-e="1"] .avatar-face-eyes {background-image: url(../avatar-src/face-eyes-2b.png);}
+
+.avatar.look-around .avatar-face{
+    animation: lookAround 5s infinite;
+}
+.avatar.happy {
+    animation: happy 0.5s infinite alternate linear;
+}
+.avatar.happy .avatar-back-hair {
+    animation: happy-hair 0.5s infinite alternate linear;
+}
+.avatar.haha .avatar-face{animation: haha 1.3s;}
+.avatar.haha .avatar-back-hair{animation: haha-hair 1.3s}
+@keyframes happy-hair {
+    0%{transform: rotate(2deg)}
+    50%{transform: rotate(0deg)}
+    100%{transform: rotate(-2deg)}
+}
+@keyframes happy {
+    0%{transform: rotate(-4deg) translate(-5px,-2px)}
+    50%{transform: rotate(0deg) translate(0,0)}
+    100%{transform: rotate(4deg) translate(5px,-2px)}
+}
+@keyframes haha {
+    0%{top:0}
+    15%{top:-4px}
+    30%{top:0}
+    45%{top:-4px}
+    60%{top:0}
+    100%{top:0}
+}
+@keyframes haha-hair {
+    0%{top:-10%}
+    16%{top:-8%}
+    32%{top:-10%}
+    46%{top:-8%}
+    63%{top:-10%}
+    100%{top:-10%}
+}
+@keyframes lookAround {
+    0%{
+        left:0;
+    }
+    5%{
+        left:-7px;
+    }
+    15%{
+        left:-7px;
+    }
+    25%{
+        left:7px;
+    }
+    35%{
+        left:7px;
+    }
+    40%{
+        left:0px;
+    }
+}
