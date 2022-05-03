@@ -2,11 +2,11 @@
 
 **Links:**
 
-* https://github.com/Timot97G/BestCombinationGame
+* https://github.com/Spishous/BestCombinationGame
 
 **Summary:**
 
 # Team members:
 
-* Timothée GIRARD
 * Rayan LUCAS
+* Timothée GIRARD
